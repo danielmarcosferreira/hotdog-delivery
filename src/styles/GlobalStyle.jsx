@@ -88,6 +88,10 @@ button {
 	cursor: pointer;
 	border-radius: 3px;
 }
+
+span {
+	color: #672E17;
+}
 `
 
 export default GlobalStyle;

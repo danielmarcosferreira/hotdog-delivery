@@ -16,10 +16,10 @@ const Header = () => {
                         <span>18:30 - 22:30</span>
                         <ion-icon name="information-outline"></ion-icon>
                     </WorkingTime>
-                    <p>Pedido mínimo: R$ 19,00</p>
+                    <p>Pedido mínimo: <span>R$ 19,00</span></p>
                     <SocialMedia>
                         <ion-icon name="logo-whatsapp"></ion-icon>
-                        <p>WhatsApp</p>
+                        <span>WhatsApp</span>
                     </SocialMedia>
                 </RestaurantInfo>
                 <LoginDiv>
@@ -52,19 +52,15 @@ const TopHeader = styled.div`
 `
 
 const GeneralInformation = styled.div`
-    width: 85%;
+    width: 92%;
     display: flex;
-    padding: 50px 0;
+    padding: 40px 0 30px 0;
 `
 
 const RestaurantInfo = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    h1 {
-        font-size: 1.5rem;
-        margin: 0;
-    }
     p {
         margin: 0.5rem 0;
     }
@@ -117,7 +113,7 @@ const SocialMedia = styled.div`
         margin-right: 5px;
         color: #672E17;
     }
-    p {
+    span {
         &:hover {
             text-decoration: underline;
         }
@@ -151,7 +147,7 @@ const LoginDiv = styled.div`
 `
 
 const ApresentationDiv = styled.div`
-    width: 85%;
+    width: 92%;
     height: 100px;
     background-color: #672E17;
     border-radius: 20px;
