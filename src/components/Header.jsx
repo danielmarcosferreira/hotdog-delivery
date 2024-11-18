@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <HeaderContainer>
             <TopHeader>
-                <img />
+                <img src='https://thumbs.dreamstime.com/z/conjunto-de-aquarelas-para-hamb%C3%BArguer-v%C3%A1rios-hamb%C3%BArgueres-tem%C3%A1ticos-temas-com-diferentes-recheios-246646532.jpg'/>
             </TopHeader>
             <GeneralInformation>
                 <RestaurantInfo>
@@ -49,6 +49,12 @@ const TopHeader = styled.div`
     background-color: #672E17;
     height: 200px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 500px;
+        height: 200px;
+    }
 `
 
 const GeneralInformation = styled.div`
