@@ -7,16 +7,7 @@ const ProductCard = ({ product }) => {
     const { isModalOpen, setIsModalOpen } = useContext(AuthContext)
     const { component, setComponent } = useContext(AuthContext)
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
     function openNewModal(produ) {
-        console.log("Entered here");
         setComponent(produ)
         setIsModalOpen(true)
         console.log(produ)
@@ -45,31 +36,36 @@ const Card = styled.div`
     align-items: center;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 4px 31px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    height: 120px;
+    height: 150px;
     cursor: pointer;
 
     img {
-        width: 120px;
-        height: 100px;
+        width: 100px;
+        height: 120px;
         border-radius: 5px;
+        margin-left: 5px;
     }
 `;
 
 const Details = styled.div`
     /* padding: 1rem; */
-    padding: 0 1rem;
-    height: 100px;
+    padding: 0 10px;
+    height: 125px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     h2 {
-        margin: 0;
-        font-size: 1.3rem;
+        font-size: 1.0rem;
         color: #874000;
+    }
+
+    h3{
+        color: #909090;
+        font-size: 0.9rem;
     }
 `;
 
@@ -81,7 +77,7 @@ const PriceContainer = styled.div`
 `;
 
 const OldPrice = styled.span`
-    font-size: 15px;
+    font-size: 13px;
     color: red;
     text-decoration: line-through;
     margin-right: 5px;
@@ -89,7 +85,7 @@ const OldPrice = styled.span`
 
 const Price = styled.span`
     color: #333;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 `;
 

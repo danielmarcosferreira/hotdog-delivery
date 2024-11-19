@@ -23,7 +23,7 @@ const TabsContainer = styled.div`
     border-radius: 3px;
     display: flex;
     justify-content: flex-start; /* Align items to the start */
-    gap: 1rem;
+    gap: 0.6rem;
     margin-top: 1.6rem;
     overflow-x: auto; /* Enable horizontal scrolling */
     overflow-y: hidden; /* Hide vertical scroll */

@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import logo from '../assets/best-logo.png'; // Replace with your logo
+import OpeningHours from './Modals/OpeningHours';
+import { AuthContext } from '../context/AuthProvider';
 
 const Header = () => {
+    const { openToggle, setOpenToggle } = useContext(AuthContext)
+
+    function openModalHours() {
+        setOpenToggle(true)
+        console.log("Entered here");
+    }
+    
     return (
         <HeaderContainer>
             <TopHeader>
-                <img src='https://thumbs.dreamstime.com/z/conjunto-de-aquarelas-para-hamb%C3%BArguer-v%C3%A1rios-hamb%C3%BArgueres-tem%C3%A1ticos-temas-com-diferentes-recheios-246646532.jpg'/>
+                <img src='https://thumbs.dreamstime.com/z/conjunto-de-aquarelas-para-hamb%C3%BArguer-v%C3%A1rios-hamb%C3%BArgueres-tem%C3%A1ticos-temas-com-diferentes-recheios-246646532.jpg' />
             </TopHeader>
             <GeneralInformation>
                 <RestaurantInfo>
                     <Logo src={logo} />
-                    <WorkingTime>
+                    <WorkingTime onClick={() => openModalHours()}>
                         <Status closed={true}>Fechado</Status>
-                        <span>18:30 - 22:30</span>
-                        <ion-icon name="information-outline"></ion-icon>
+                        <span>18:30 - 22:30 <ion-icon name="information-outline"></ion-icon></span>
                     </WorkingTime>
                     <p>Pedido mínimo: <span>R$ 19,00</span></p>
                     <SocialMedia>
@@ -84,7 +92,10 @@ const WorkingTime = styled.div`
     align-items: center;
     text-align: center;
     align-content: center;
+    cursor: pointer;
     span {
+        display: flex;
+        line-height: 22px;
         margin: 0 10px;
     }
     ion-icon {
@@ -93,7 +104,12 @@ const WorkingTime = styled.div`
         background-color: #672E17;
         color: #FFF;
         border-radius: 50%;
-        cursor: pointer;
+        margin-left: 5px;
+    }
+    &:hover {
+        span {
+            text-decoration: underline;
+        }
     }
 `
 

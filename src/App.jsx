@@ -7,6 +7,7 @@ import ProductList from "./components/ProductList"
 
 import AuthProvider from "./context/AuthProvider"
 import ModalProductClosed from "./components/Modals/ProductModalClosed"
+import OpeningHours from "./components/Modals/OpeningHours"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <SearchBar />
         <ProductList />
         <ModalProductClosed />
+        <OpeningHours />
       </ContainerApp>
     </AuthProvider>
     

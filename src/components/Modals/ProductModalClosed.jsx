@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AuthContext } from '../../context/AuthProvider';
+import ProductDetails from './AdditionalItemsClosed';
 
 const ModalProductClosed = () => {
   const { isModalOpen, setIsModalOpen, component, setComponent } = useContext(AuthContext)
@@ -27,18 +28,16 @@ const ModalProductClosed = () => {
               <CloseButton onClick={closeModal}>Ok!</CloseButton>
             </ModalHeader>
             <ModalContent>
-              <ModalHeaderDescription>
+              {/* <ModalHeaderDescription>
                 <img src={component.image} />
                 <ModalItemDescription>
                   <h2>{component.title}</h2>
                   <h3>{component.description}</h3>
                 </ModalItemDescription>
-              </ModalHeaderDescription>
-              <AdditionalItems>
-
-              </AdditionalItems>
-              <p>This is the content of the modal!</p>
-              <Button onClick={closeModal}>Close</Button>
+              </ModalHeaderDescription> */}
+              <ProductDetails product={component}/>
+              {/* <p>This is the content of the modal!</p>
+              <Button onClick={closeModal}>Close</Button> */}
             </ModalContent>
           </ModalContainer>
         </>
@@ -66,9 +65,13 @@ const ModalContainer = styled.div`
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 600px;
+    max-height: 90vh; /* Adjusts based on viewport height */
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    overflow-y: auto; /* Enables vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
 `;
 
 const ModalHeader = styled.div`

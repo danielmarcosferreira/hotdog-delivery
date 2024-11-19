@@ -14,7 +14,7 @@ const SearchContainer = styled.div`
     width: 92%;
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    margin: 10px 1rem;
     position: relative;
     ion-icon {
         font-size: 25px;
