@@ -5,7 +5,7 @@ import OpeningHours from './Modals/OpeningHours';
 import { AuthContext } from '../context/AuthProvider';
 
 const Header = () => {
-    const { openToggle, setOpenToggle } = useContext(AuthContext)
+    const { openToggle, setOpenToggle, setOpenLogin } = useContext(AuthContext)
 
     function openModalHours() {
         setOpenToggle(true)
@@ -31,7 +31,7 @@ const Header = () => {
                     </SocialMedia>
                 </RestaurantInfo>
                 <LoginDiv>
-                    <button>Login</button>
+                    <button onClick={() => setOpenLogin(true)}>Login</button>
                     <span><ion-icon name="star"></ion-icon>(5.0)</span>
                 </LoginDiv>
             </GeneralInformation>
@@ -68,7 +68,7 @@ const TopHeader = styled.div`
 const GeneralInformation = styled.div`
     width: 92%;
     display: flex;
-    padding: 40px 0 30px 0;
+    padding: 30px 0 20px 0;
 `
 
 const RestaurantInfo = styled.div`
@@ -170,8 +170,8 @@ const LoginDiv = styled.div`
 
 const ApresentationDiv = styled.div`
     width: 92%;
-    height: 100px;
-    background-color: #672E17;
+    height: 90px;
+    background-color: #512e1f;
     border-radius: 20px;
     display: flex;
     justify-content: start;

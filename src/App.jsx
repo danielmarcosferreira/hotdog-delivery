@@ -1,36 +1,27 @@
-import styled from "styled-components"
-import Header from "./components/Header"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import GlobalStyle from "./styles/GlobalStyle"
-import NavigationTabs from "./components/NavigationTabs"
-import SearchBar from "./components/SearchBar"
-import ProductList from "./components/ProductList"
-
 import AuthProvider from "./context/AuthProvider"
-import ModalProductClosed from "./components/Modals/ProductModalClosed"
-import OpeningHours from "./components/Modals/OpeningHours"
+import IndexHome from "./pages/home/IndexHome"
+
+const AllRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<IndexHome />} />
+    </Routes>
+  )
+}
 
 function App() {
   return (
-    <AuthProvider>
+    <>
       <GlobalStyle />
-      <ContainerApp>
-        <Header />
-        <NavigationTabs />
-        <SearchBar />
-        <ProductList />
-        <ModalProductClosed />
-        <OpeningHours />
-      </ContainerApp>
-    </AuthProvider>
-    
+      <AuthProvider>
+        <Router>
+          <AllRoutes />
+        </Router>
+      </AuthProvider>
+    </>
   )
 }
 
 export default App
-
-const ContainerApp = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`

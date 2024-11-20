@@ -108,14 +108,14 @@ const ProductList = () => {
 
     return (
         <ListContainer>
-            <DivName>
+            <DivName >
                 <h1>Hamburguer Artesanal</h1>
             </DivName>
             {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
             ))}
 
-            <DivName>
+            <DivName id='#traditional'>
                 <h1>Lanches Tradicional</h1>
             </DivName>
             {products.map((product) => (
@@ -144,7 +144,7 @@ const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* padding: 1rem; */
+    /* padding: 1rem; */;
 `;
 
 const DivName = styled.div`

@@ -64,6 +64,42 @@ const RestaurantInfoModal = ({
     );
 };
 
+const OpeningHours = () => {
+    const { setOpenToggle } = useContext(AuthContext);
+
+    const openModalHours = () => {
+        setOpenToggle(true);
+    };
+
+    const restaurantData = {
+        name: "Best Burger",
+        address: "Rua Sebastião Antunes, 2 - Vila, Bananal / SP",
+        deliveryTime: "25 - 45 minutos",
+        counterTime: "25 - 45 minutos",
+        operatingHours: {
+            Domingo: "18:30 - 22:30",
+            Segunda: "Fechado",
+            Terça: "Fechado",
+            Quarta: "18:30 - 22:30",
+            Quinta: "18:45 - 22:30",
+            Sexta: "18:30 - 22:30",
+            Sábado: "Fechado",
+        },
+        paymentMethods: [
+            "Dinheiro",
+            "PIX (chave exibida após o envio)",
+            "Cartão de Débito - Maquininha",
+            "Cartão de Crédito - Maquininha",
+        ],
+    };
+
+    return (
+        <>
+            <RestaurantInfoModal {...restaurantData} />
+        </>
+    );
+};
+
 // Styled Components
 const ModalOverlay = styled.div`
     position: fixed;
@@ -206,41 +242,5 @@ const PaymentItem = styled.li`
 `;
 
 // Example Usage
-const OpeningHours = () => {
-    const { setOpenToggle } = useContext(AuthContext);
-
-    const openModalHours = () => {
-        setOpenToggle(true);
-    };
-
-    const restaurantData = {
-        name: "Best Burger",
-        address: "Rua Sebastião Antunes, 2 - Vila, Bananal / SP",
-        deliveryTime: "25 - 45 minutos",
-        counterTime: "25 - 45 minutos",
-        operatingHours: {
-            Domingo: "18:30 - 22:30",
-            Segunda: "Fechado",
-            Terça: "Fechado",
-            Quarta: "18:30 - 22:30",
-            Quinta: "18:45 - 22:30",
-            Sexta: "18:30 - 22:30",
-            Sábado: "Fechado",
-        },
-        paymentMethods: [
-            "Dinheiro",
-            "PIX (chave exibida após o envio)",
-            "Cartão de Débito - Maquininha",
-            "Cartão de Crédito - Maquininha",
-        ],
-    };
-
-    return (
-        <>
-            <button onClick={openModalHours}>Open Restaurant Info</button>
-            <RestaurantInfoModal {...restaurantData} />
-        </>
-    );
-};
 
 export default OpeningHours;
